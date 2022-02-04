@@ -1,13 +1,12 @@
-import React from 'react';
-import { GlobalStyle } from 'assets/styles/GlobalStyle';
-import { lightTheme, darkTheme } from 'assets/styles/theme';
-import { ThemeProvider } from 'styled-components';
+import { AuthContext } from 'providers/AuthProvider';
+import React, { useContext } from 'react';
+import AuthenticatedApp from './AuthenticatedApp';
+import UnauthenticatedApp from './UnauthenticatedApp';
 
-const Root = () => (
-  <ThemeProvider theme={lightTheme}>
-    <GlobalStyle />
-    <h1>Hello world</h1>
-  </ThemeProvider>
-);
+const Root = () => {
+  const { currentUser } = useContext(AuthContext);
+
+  return <>{currentUser ? <AuthenticatedApp /> : <UnauthenticatedApp />}</>;
+};
 
 export default Root;
