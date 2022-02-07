@@ -11,7 +11,7 @@ import {
   getRedirectResult,
 } from 'firebase/auth';
 import { app } from 'firebase/Firebase';
-import { ERRORS } from 'constant/Constant';
+import { errors } from 'constant/Constant';
 
 export const AuthContext = React.createContext({
   currentUser: null,
@@ -49,21 +49,21 @@ const AuthProvider = ({ children }) => {
   const handleSignInWithGoogle = () => {
     signInWithRedirect(auth, googleProvider);
     getRedirectResult(auth).catch(() => {
-      setError(ERRORS.SOCIAL_LOG_ERROR);
+      setError(errors.SOCIAL_LOG_ERROR);
     });
   };
 
   const handleSignInWithFacebook = () => {
     signInWithRedirect(auth, facebookProvider);
     getRedirectResult(auth).catch(() => {
-      setError(ERRORS.SOCIAL_LOG_ERROR);
+      setError(errors.SOCIAL_LOG_ERROR);
     });
   };
 
   const handleSignInWithGithub = () => {
     signInWithRedirect(auth, githubProvider);
     getRedirectResult(auth).catch(() => {
-      setError(ERRORS.SOCIAL_LOG_ERROR);
+      setError(errors.SOCIAL_LOG_ERROR);
     });
   };
 
@@ -72,14 +72,14 @@ const AuthProvider = ({ children }) => {
   const handleSignUp = (e) => {
     e.preventDefault();
     createUserWithEmailAndPassword(auth, email, password).catch(() => {
-      setError(ERRORS.SIGN_UP_ERROR);
+      setError(errors.SIGN_UP_ERROR);
     });
   };
 
   const handleSignIn = (e) => {
     e.preventDefault();
     signInWithEmailAndPassword(auth, email, password).catch(() => {
-      setError(ERRORS.SIGN_IN_ERROR);
+      setError(errors.SIGN_IN_ERROR);
     });
   };
 
