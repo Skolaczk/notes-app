@@ -10,14 +10,6 @@ export const StyledNotesListItem = styled.div`
     background: ${({ theme }) => theme.hover};
   }
 
-  button {
-    background: transparent;
-    border: none;
-    color: ${({ theme }) => theme.text};
-    font-size: 16px;
-    cursor: pointer;
-  }
-
   a {
     text-decoration: none;
     color: ${({ theme }) => theme.text};
