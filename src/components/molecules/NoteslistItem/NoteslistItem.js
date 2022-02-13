@@ -20,9 +20,9 @@ const NotesListItem = ({ notesData: { id, title, content } }) => {
     <StyledNotesListItem>
       <Link to="/note" onClick={handleFindNoteById}>
         <div>
-          <p>{title.length > 40 ? `${title.slice(0, 40)}...` : title}</p>
+          <p>{title.length > 40 ? `${title.slice(0, 30)}...` : title}</p>
           <StyledDescription>
-            {content.length > 45 ? `${content.slice(0, 45)}...` : content}
+            {content.length > 45 ? `${content.slice(0, 35)}...` : content}
           </StyledDescription>
         </div>
       </Link>

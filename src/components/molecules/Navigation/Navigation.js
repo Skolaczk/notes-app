@@ -5,7 +5,7 @@ import { StyledIconButton } from 'components/atoms/IconButton/IconButton';
 import { useDispatch } from 'react-redux';
 import { clearCurrentNoteIndex } from 'store/notes';
 
-const Navigation = () => {
+const Navigation = ({ handleChangeModalState }) => {
   const dispatch = useDispatch();
 
   const handleClearCurrentNoteIndex = () => {
@@ -14,7 +14,7 @@ const Navigation = () => {
 
   return (
     <StyledNavigation>
-      <StyledIconButton>
+      <StyledIconButton onClick={handleChangeModalState}>
         <i className="fas fa-cog"></i>
       </StyledIconButton>
       <p>All notes</p>
