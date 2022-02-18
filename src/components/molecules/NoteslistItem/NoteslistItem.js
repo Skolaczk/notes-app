@@ -2,7 +2,7 @@ import React from 'react';
 import { StyledDescription, StyledNotesListItem } from './NotesListItem.styles';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { removeNote, findNoteIndex } from 'store/notes';
+import { removeNote, findNoteIndex } from 'store/actionCreators';
 import { StyledIconButton } from 'components/atoms/IconButton/IconButton';
 
 const NotesListItem = ({ notesData: { id, title, content } }) => {

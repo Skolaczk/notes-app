@@ -5,4 +5,10 @@ export const StyledFormNavigation = styled.div`
   border-bottom: 1px solid ${({ theme }) => theme.line};
   display: flex;
   justify-content: space-between;
+
+  @media (min-width: 768px) {
+    button:first-child {
+      display: none;
+    }
+  }
 `;

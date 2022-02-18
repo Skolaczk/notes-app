@@ -4,6 +4,9 @@ export const StyledUnauthenticatedApp = styled.div`
   width: 100%;
   height: 100vh;
   background: ${({ theme }) => theme.hover};
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   h1,
   p {
@@ -28,6 +31,13 @@ export const Wrapper = styled.div`
   height: 100vh;
   background: ${({ theme }) => theme.background};
   padding: 25px 20px;
+
+  @media (min-width: 425px) {
+    padding: 35px;
+    width: 425px;
+    height: 500px;
+    border-radius: 10px;
+  }
 `;
 
 export const ButtonsWrapper = styled.div`

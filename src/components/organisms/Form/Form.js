@@ -2,7 +2,7 @@ import React from 'react';
 import FormNavigation from 'components/molecules/FormNavigation/FormNavigation';
 import { StyledForm } from './Form.styles';
 import { useForm } from 'react-hook-form';
-import { addNote, editNote } from 'store/notes';
+import { addNote, editNote } from 'store/actionCreators';
 import { useDispatch, useSelector } from 'react-redux';
 
 const Form = () => {
@@ -12,12 +12,18 @@ const Form = () => {
   const dispatch = useDispatch();
 
   const handleAddNote = ({ title, content }) => {
+    if (title === '' || content === '') {
+      alert('Title and content must be completed');
+      return;
+    }
     dispatch(addNote({ title, content }));
     reset();
   };
 
   const handleEditNote = ({ title, content }) => {
+    if (title === '' && content === '') return;
     dispatch(editNote({ title, content }));
+    reset();
   };
 
   return (

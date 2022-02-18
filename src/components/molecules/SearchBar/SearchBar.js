@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyledSearchBar } from './SearchBar.styles';
 import { useDispatch } from 'react-redux';
-import { findNote } from 'store/notes';
+import { findNote } from 'store/actionCreators';
 
 const SearchBar = () => {
   const dispatch = useDispatch();

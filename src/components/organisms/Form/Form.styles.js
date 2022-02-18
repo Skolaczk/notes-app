@@ -28,5 +28,21 @@ export const StyledForm = styled.form`
     min-height: 85vh;
     font-size: 16px;
     line-height: 1.5;
+    overflow-y: scroll;
+
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: ${({ theme }) => theme.lightText};
+      border-radius: 5px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
   }
 `;

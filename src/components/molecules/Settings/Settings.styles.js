@@ -16,11 +16,15 @@ export const StyledSettings = styled.div`
     cursor: pointer;
     font-weight: 700;
   }
+
+  @media (min-width: 425px) {
+    padding: 5px 25px 25px;
+  }
 `;
 
 export const StyledParagraph = styled.p`
   color: ${({ theme }) => theme.lightText};
-  margin: 10px 0 5px;
+  margin: 15px 0 5px;
   font-size: 14px;
 `;
 

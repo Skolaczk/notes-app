@@ -10,6 +10,12 @@ const SettingsModal = ({ isOpen, handleChangeModalState }) => {
       isOpen={isOpen}
       contentLabel="Settings Modal"
       onRequestClose={handleChangeModalState}
+      style={{
+        overlay: {
+          background: 'rgba(196, 196, 196, 0.25)',
+          backdropFilter: 'blur(2px)',
+        },
+      }}
     >
       <ModalNavigation handleChangeModalState={handleChangeModalState} />
       <Settings />

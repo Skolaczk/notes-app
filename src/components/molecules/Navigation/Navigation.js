@@ -3,7 +3,7 @@ import { StyledNavigation } from './Navigation.styles';
 import { Link } from 'react-router-dom';
 import { StyledIconButton } from 'components/atoms/IconButton/IconButton';
 import { useDispatch } from 'react-redux';
-import { clearCurrentNoteIndex } from 'store/notes';
+import { clearCurrentNoteIndex } from 'store/actionCreators';
 
 const Navigation = ({ handleChangeModalState }) => {
   const dispatch = useDispatch();

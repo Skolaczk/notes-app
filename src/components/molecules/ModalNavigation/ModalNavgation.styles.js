@@ -12,4 +12,8 @@ export const StyledModalNavigation = styled.div`
   ${StyledIconButton} {
     transform: rotate(45deg);
   }
+
+  @media (min-width: 425px) {
+    padding: 15px 25px;
+  }
 `;
