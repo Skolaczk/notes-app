@@ -36,3 +36,16 @@ export const StyledBox = styled.div`
   justify-content: space-between;
   align-items: center;
 `;
+
+export const StyledBoxImage = styled(StyledBox)`
+  padding: 3.5px 8px;
+
+  img {
+    height: 30px;
+    border-radius: 50%;
+  }
+`;
+
+export const StyledInfoParagraph = styled(StyledParagraph)`
+  text-align: center;
+`;

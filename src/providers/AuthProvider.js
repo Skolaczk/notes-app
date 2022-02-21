@@ -87,10 +87,10 @@ const AuthProvider = ({ children }) => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         setCurrentUser(user);
-        localStorage.setItem('user', user.email);
+        localStorage.setItem('token', user.accessToken);
       } else {
         setCurrentUser(null);
-        localStorage.removeItem('user');
+        localStorage.removeItem('token');
       }
     });
   }, [auth]);

@@ -5,7 +5,7 @@ import { useForm } from 'react-hook-form';
 import { addNote, editNote } from 'store/actionCreators';
 import { useDispatch, useSelector } from 'react-redux';
 
-const Form = () => {
+const Form = ({ handleOpenWarning }) => {
   const { register, handleSubmit, reset } = useForm();
   const currentNoteIndex = useSelector((state) => state.currentNoteIndex);
   const notes = useSelector((state) => state.notes);
@@ -13,16 +13,20 @@ const Form = () => {
 
   const handleAddNote = ({ title, content }) => {
     if (title === '' || content === '') {
-      alert('Title and content must be completed');
-      return;
+      handleOpenWarning();
+    } else {
+      dispatch(addNote({ title, content }));
+      reset();
     }
-    dispatch(addNote({ title, content }));
-    reset();
   };
 
   const handleEditNote = ({ title, content }) => {
-    if (title === '' && content === '') return;
-    dispatch(editNote({ title, content }));
+    if (title === '' && content === '') handleOpenWarning();
+    else if (title === '') {
+      dispatch(editNote({ title: notes[currentNoteIndex].title, content }));
+    } else if (content === '') {
+      dispatch(editNote({ title, content: notes[currentNoteIndex].content }));
+    } else dispatch(editNote({ title, content }));
     reset();
   };
 

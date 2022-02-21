@@ -3,7 +3,12 @@ import ModalNavigation from 'components/molecules/ModalNavigation/ModalNavigatio
 import { StyledSettingsModal } from './SettingsModal.styles';
 import Settings from 'components/molecules/Settings/Settings';
 
-const SettingsModal = ({ isOpen, handleChangeModalState }) => {
+const SettingsModal = ({
+  isOpen,
+  handleChangeModalState,
+  handleChangeModeState,
+  modeState,
+}) => {
   return (
     <StyledSettingsModal
       appElement={document.getElementById('root')}
@@ -18,7 +23,10 @@ const SettingsModal = ({ isOpen, handleChangeModalState }) => {
       }}
     >
       <ModalNavigation handleChangeModalState={handleChangeModalState} />
-      <Settings />
+      <Settings
+        handleChangeModeState={handleChangeModeState}
+        modeState={modeState}
+      />
     </StyledSettingsModal>
   );
 };
