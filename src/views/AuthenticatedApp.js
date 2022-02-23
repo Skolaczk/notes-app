@@ -69,6 +69,8 @@ const AuthenticatedApp = ({ handleChangeModeState, modeState }) => {
                   <SettingsModal
                     isOpen={isOpen}
                     handleChangeModalState={handleChangeModalState}
+                    handleChangeModeState={handleChangeModeState}
+                    modeState={modeState}
                   />
                 </>
               }

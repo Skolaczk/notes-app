@@ -3,15 +3,20 @@ import styled from 'styled-components';
 export const StyledSettings = styled.div`
   padding: 5px 15px 15px;
 
+  label {
+    display: block;
+    width: 95%;
+  }
+
   button {
     background-color: ${({ theme }) => theme.button};
     border: none;
     text-align: center;
     color: white;
     border-radius: 25px;
-    width: 100%;
+    width: 48%;
     padding: 7px;
-    font-size: 15px;
+    font-size: 14px;
     margin-top: 25px;
     cursor: pointer;
     font-weight: 700;
@@ -48,4 +53,9 @@ export const StyledBoxImage = styled(StyledBox)`
 
 export const StyledInfoParagraph = styled(StyledParagraph)`
   text-align: center;
+`;
+
+export const StyledButtonWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
 `;

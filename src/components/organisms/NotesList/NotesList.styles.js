@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 
 export const StyledNotesList = styled.div`
-  overflow-y: ${({ value }) => (value > 10 ? 'scroll' : 'none')};
-  height: calc(100vh - 40px);
+  position: relative;
+  height: calc(100vh - 80px);
+  overflow-y: scroll;
 
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 7px;
+    background-color: ${({ theme }) => theme.line};
   }
 
   ::-webkit-scrollbar-thumb {

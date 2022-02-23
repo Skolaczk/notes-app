@@ -43,6 +43,11 @@ export const notesReducer = (state = initialState, action) => {
           i === state.currentNoteIndex ? action.payload : note
         ),
       };
+    case types.REMOVE_ALL_NOTES:
+      return {
+        ...state,
+        notes: [],
+      };
     default:
       return state;
   }

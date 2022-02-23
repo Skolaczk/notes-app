@@ -15,7 +15,7 @@ const Navigation = ({ handleChangeModalState }) => {
   return (
     <StyledNavigation>
       <StyledIconButton onClick={handleChangeModalState}>
-        <i className="fas fa-cog"></i>
+        <i className="fa-solid fa-gear"></i>
       </StyledIconButton>
       <p>All notes</p>
       <Link to="/note">

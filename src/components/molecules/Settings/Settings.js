@@ -3,16 +3,24 @@ import { AuthContext } from 'providers/AuthProvider';
 import {
   StyledBox,
   StyledBoxImage,
+  StyledButtonWrapper,
   StyledInfoParagraph,
   StyledParagraph,
   StyledSettings,
 } from './Settings.styles';
+import { useDispatch } from 'react-redux';
+import { removeAllNotes } from 'store/actionCreators';
 
 const Settings = ({ handleChangeModeState, modeState }) => {
   const {
     currentUser: { displayName, photoURL, email, reloadUserInfo },
     handleSignOut,
   } = useContext(AuthContext);
+  const dispatch = useDispatch();
+
+  const handleRemoveAllNotes = () => {
+    dispatch(removeAllNotes());
+  };
 
   return (
     <StyledSettings>
@@ -47,7 +55,10 @@ const Settings = ({ handleChangeModeState, modeState }) => {
           defaultChecked={modeState ? true : false}
         />
       </StyledBox>
-      <button onClick={handleSignOut}>Log Out</button>
+      <StyledButtonWrapper>
+        <button onClick={handleRemoveAllNotes}>Remove Notes</button>
+        <button onClick={handleSignOut}>Log Out</button>
+      </StyledButtonWrapper>
       <StyledInfoParagraph>
         Logged in by: {reloadUserInfo.providerUserInfo[0].providerId}
       </StyledInfoParagraph>

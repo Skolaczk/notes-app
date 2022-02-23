@@ -47,3 +47,9 @@ export const editNote = (payload) => {
     },
   };
 };
+
+export const removeAllNotes = () => {
+  return {
+    type: types.REMOVE_ALL_NOTES,
+  };
+};

@@ -7,7 +7,7 @@ const ModalNavigation = ({ handleChangeModalState }) => {
     <StyledModalNavigation>
       <p>Settings</p>
       <StyledIconButton onClick={handleChangeModalState}>
-        <i className="fas fa-plus"></i>
+        <i className="fa-solid fa-xmark"></i>
       </StyledIconButton>
     </StyledModalNavigation>
   );

@@ -8,7 +8,7 @@ const NotesList = () => {
   const filteredNotes = useSelector((state) => state.filteredNotes);
 
   return (
-    <StyledNotesList value={notes.length}>
+    <StyledNotesList>
       {notes.length === 0 && <StyledParagraph>no notes</StyledParagraph>}
       {filteredNotes.length === 0
         ? notes.map((notesData) => (
